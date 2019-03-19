@@ -3,9 +3,10 @@
   "version": "1.0.0",
   "description": "Updated quick-start for using react-responsive-carousel.",
   "keywords": [],
-  "homepage": "https://codesandbox.io/s/new",
+  "homepage": "https://github.com/adititipnis/TWB.git",
   "main": "src/index.js",
   "dependencies": {
+    "gh-pages": "^2.0.1",
     "react": "16.2.0",
     "react-background-slider": "^1.2.0",
     "react-dom": "16.2.0",
@@ -14,6 +15,8 @@
   "devDependencies": {},
   "scripts": {
     "start": "react-scripts start",
+    "predeploy": "yarn run build",
+    "deploy": "gh-pages -d build",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
