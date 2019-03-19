@@ -2,6 +2,7 @@ import React from "react";
 import { render } from "react-dom";
 import BackgroundSlider from 'react-background-slider'
 import VideoPopup from './components/VideoPopup'
+import Featured from './components/Featured'
 
 const image1 = require('./images/1.jpg')
 const image2 = require('./images/2.jpg')
@@ -65,28 +66,28 @@ export default class App extends React.Component {
     </div>
 <div style={{marginTop: '30vh', }}>
     <div className="featuredStrip">
-      <span><img className="click-1" src={featuredImage1} onClick={this.showVideo}></img></span>
-      <span><img className="click-1" src={featuredImage2}></img></span>
-      <span><img className="click-1" src={featuredImage3}></img></span>
-      <span><img className="click-1" src={featuredImage4}></img></span>
+      <Featured src={featuredImage1} open={this.showVideo} />
+      <Featured src={featuredImage2} open={this.showVideo} />
+      <Featured src={featuredImage3} open={this.showVideo} />
+      <Featured src={featuredImage4} open={this.showVideo} />
     </div>
     <div className="featuredStrip">
-    <span><img className="click-1" src={featuredImage3}></img></span>
-      <span><img className="click-1" src={featuredImage4}></img></span>
-      <span><img className="click-1" src={featuredImage1}></img></span>
-      <span><img className="click-1" src={featuredImage2}></img></span>
+      <Featured src={featuredImage3} open={this.showVideo} />
+      <Featured src={featuredImage4} open={this.showVideo} />
+      <Featured src={featuredImage1} open={this.showVideo} />
+      <Featured src={featuredImage2} open={this.showVideo} />
     </div>
     <div className="featuredStrip">
-      <span><img className="click-1" src={featuredImage1}></img></span>
-      <span><img className="click-1" src={featuredImage2}></img></span>
-      <span><img className="click-1" src={featuredImage3}></img></span>
-      <span><img className="click-1" src={featuredImage4}></img></span>
+      <Featured src={featuredImage1} open={this.showVideo} />
+      <Featured src={featuredImage2} open={this.showVideo} />
+      <Featured src={featuredImage3} open={this.showVideo} />
+      <Featured src={featuredImage4} open={this.showVideo} />
     </div>
     <div className="featuredStrip">
-    <span><img className="click-1" src={featuredImage3}></img></span>
-      <span><img className="click-1" src={featuredImage4}></img></span>
-      <span><img className="click-1" src={featuredImage1}></img></span>
-      <span><img className="click-1" src={featuredImage2}></img></span>
+      <Featured src={featuredImage3} open={this.showVideo} />
+      <Featured src={featuredImage4} open={this.showVideo} />
+      <Featured src={featuredImage1} open={this.showVideo} />
+      <Featured src={featuredImage2} open={this.showVideo} />
     </div>
     </div>
 
