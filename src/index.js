@@ -1,6 +1,7 @@
 import React from "react";
 import { render } from "react-dom";
 import BackgroundSlider from 'react-background-slider'
+import VideoPopup from './components/VideoPopup'
 
 const image1 = require('./images/1.jpg')
 const image2 = require('./images/2.jpg')
@@ -15,12 +16,40 @@ const serviceImage2 = require('./images/service-2.png')
 const serviceImage3 = require('./images/service-3.png')
 const serviceImage4 = require('./images/service-4.png')
 
-const App = () => (
-  <div>
-    <BackgroundSlider
+let videoPopup = null
+
+export default class App extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = {isVideoVisible: false}
+  }
+
+  componentDidMount() {
+    window.onscroll =()=>{
+      const newScrollHeight = Math.ceil(window.scrollY / 50) *50;
+      if (this.state.currentScrollHeight != newScrollHeight){
+          this.setState({currentScrollHeight: newScrollHeight})
+      }
+    }
+  }
+
+  componentWillUnmount() {
+    //window.removeEventListener('scroll', this.backgroundScrolled);
+  }
+
+  showVideo = () => this.setState({ isVideoVisible: true })
+
+  hideVideo = () => this.setState({ isVideoVisible: false })
+
+  render() {
+  const navClassName = this.state.currentScrollHeight > 500 ? 'navbar-fixed-top navbar-fixed-top-black' : 'navbar-fixed-top'
+  console.log(this.state.currentScrollHeight)
+  return (<div>
+    <BackgroundSlider onscroll={this.backgroundScrolled}
   images={[image1, image2]}
   duration={3} transition={2} />
-  <nav id="navigation" class="navbar navbar-dark bg-primary navbar-fixed-top">	
+  {this.state.isVideoVisible && <VideoPopup closeVideo={this.hideVideo} />}
+  <nav id="navigation" className={navClassName}>	
     <ul>
       <li>HOME</li>
       <li>SERVICES</li>
@@ -36,7 +65,7 @@ const App = () => (
     </div>
 <div style={{marginTop: '30vh', }}>
     <div className="featuredStrip">
-      <span><img className="click-1" src={featuredImage1}></img></span>
+      <span><img className="click-1" src={featuredImage1} onClick={this.showVideo}></img></span>
       <span><img className="click-1" src={featuredImage2}></img></span>
       <span><img className="click-1" src={featuredImage3}></img></span>
       <span><img className="click-1" src={featuredImage4}></img></span>
@@ -71,7 +100,8 @@ const App = () => (
             </ul>
     </div>
     </div>
-  </div>
-);
+  </div>)
+  }
+}
 
 render(<App />, document.getElementById("root"));

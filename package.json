@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Updated quick-start for using react-responsive-carousel.",
   "keywords": [],
-  "homepage": "https://github.com/adititipnis/TWB.git",
+  "homepage": ".",
   "main": "src/index.js",
   "dependencies": {
     "gh-pages": "^2.0.1",
