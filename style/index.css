@@ -154,6 +154,7 @@ html, body {
     height: auto;
   scroll-snap-align: start;
   position: relative;
+  text-align: center
 }
 
 .footer {
