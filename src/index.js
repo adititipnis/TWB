@@ -3,6 +3,7 @@ import { render } from "react-dom";
 import BackgroundSlider from 'react-background-slider'
 import VideoPopup from './components/VideoPopup'
 import Featured from './components/Featured'
+import WorldMap from './components/WorldMap'
 
 const image1 = require('./images/1.jpg')
 const image2 = require('./images/2.jpg')
@@ -45,7 +46,7 @@ export default class App extends React.Component {
   render() {
   const navClassName = this.state.currentScrollHeight > 500 ? 'navbar-fixed-top navbar-fixed-top-black' : 'navbar-fixed-top'
   console.log(this.state.currentScrollHeight)
-  return (<div>
+  return (<div className="mainContainer">
     <BackgroundSlider onscroll={this.backgroundScrolled}
   images={[image1, image2]}
   duration={3} transition={2} />
@@ -58,13 +59,13 @@ export default class App extends React.Component {
       <li>CONTACT</li>
     </ul>
     </nav>
-    <div style={{display:'flex', justifyContent:'space-evenly', alignItems:'center', marginTop: '100vh', backgroundColor: 'black'}}>
+    <div className="servicesSection">
       <div className="service"><img src={serviceImage1}></img><span>VIDEO PRODUCTION</span></div>
       <div className="service"><img src={serviceImage2}></img><span>MUSIC PRODUCTION</span></div>
       <div className="service"><img src={serviceImage3}></img><span>EVENT COVERAGE</span></div>
       <div className="service"><img src={serviceImage4}></img><span>TECH COMMUNICATION</span></div>
     </div>
-<div style={{marginTop: '30vh', }}>
+<div className="featuredSection">
     <div className="featuredStrip">
       <Featured src={featuredImage1} open={this.showVideo} />
       <Featured src={featuredImage2} open={this.showVideo} />
@@ -90,8 +91,9 @@ export default class App extends React.Component {
       <Featured src={featuredImage2} open={this.showVideo} />
     </div>
     </div>
-
-    <div style={{display:'flex', justifyContent:'space-evenly', alignItems:'center', backgroundColor: 'black', height:'30vh'}}>
+    <WorldMap className="clientsMap" />
+    <div id="pixlee_container" style={{width:'50vw'}}></div>
+    <div className="footer">
     <div class="social-media-icons" >
     <ul class="list-inline col-xs-12">
               <a href="#"><i class="fa fa-google-plus-square fa-5x"></i></a>

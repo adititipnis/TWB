@@ -23,7 +23,7 @@ li {
 
   .navbar-fixed-top-black {
     background-color: #000 !important;
-    transition: background-color 2000ms linear;
+    transition: background-color 500ms linear;
     color: #fff !important;
     position: fixed;
     right: 0;
@@ -108,10 +108,12 @@ li {
     justify-content: space-evenly;
     align-items: center;
     width: 98.75vw;
+    scroll-snap-align: start;
+    position: relative;
 }
 
 .service {
-    margin-top: 50vh;
+    margin-top: 20vh;
     display: flex;
     flex-direction: column
 }
@@ -120,4 +122,47 @@ li {
     margin: auto;
     color: white;
     margin-top: 20px
+}
+
+html, body {
+    height: 100vh;
+  overflow: hidden;
+  }
+
+.mainContainer { 
+  overflow: scroll;
+  scroll-behavior: smooth;
+  height: 100vh;
+  scroll-snap-type: proximity;
+  scroll-snap-points-y: repeat(100vh);
+  scroll-snap-type: y proximity;
+}
+
+.servicesSection {
+    display: flex; 
+    justify-content: space-evenly;
+    align-items: center; 
+    margin-top: 100vh; 
+    background-color: black;
+    height: 100vh;
+  scroll-snap-align: start;
+  position: relative;
+}
+
+.clientsMap {
+    background-color: #222;
+    height: auto;
+  scroll-snap-align: start;
+  position: relative;
+  text-align: center
+}
+
+.footer {
+    display:flex;
+    justify-content:space-evenly;
+    align-items:center;
+    background-color:black;
+    height: 30vh;
+  scroll-snap-align: end;
+  position: relative;
 }
