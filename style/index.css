@@ -124,17 +124,12 @@ li {
     margin-top: 20px
 }
 
-html, body {
-    height: 100vh;
-  overflow: hidden;
-  }
+
 
 .mainContainer { 
   overflow: scroll;
   scroll-behavior: smooth;
-  height: 100vh;
-  scroll-snap-type: proximity;
-  
+  height: 100vh;  
   scroll-snap-type: y proximity;
 }
 
