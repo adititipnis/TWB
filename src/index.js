@@ -1,5 +1,5 @@
 import React from "react";
-import { render } from "react-dom";
+import ReactDOM, { render } from "react-dom";
 import BackgroundSlider from 'react-background-slider'
 import VideoPopup from './components/VideoPopup'
 import Featured from './components/Featured'
@@ -27,12 +27,20 @@ export default class App extends React.Component {
   }
 
   componentDidMount() {
-    window.onscroll =()=>{
+    window.onscroll = ()=>{
       const newScrollHeight = Math.ceil(window.scrollY / 50) *50;
       if (this.state.currentScrollHeight != newScrollHeight){
           this.setState({currentScrollHeight: newScrollHeight})
       }
     }
+  }
+
+  onMainScroll = (event) => {
+    const newScrollHeight = Math.ceil(ReactDOM.findDOMNode(this).scrollTop / 50) *50;
+    console.log(ReactDOM.findDOMNode(this).scrollTop)
+      if (this.state.currentScrollHeight != newScrollHeight){
+          this.setState({currentScrollHeight: newScrollHeight})
+      }
   }
 
   componentWillUnmount() {
@@ -46,7 +54,7 @@ export default class App extends React.Component {
   render() {
   const navClassName = this.state.currentScrollHeight > 500 ? 'navbar-fixed-top navbar-fixed-top-black' : 'navbar-fixed-top'
   console.log(this.state.currentScrollHeight)
-  return (<div className="mainContainer">
+  return (<div className="mainContainer" onScroll={this.onMainScroll}>
     <BackgroundSlider onscroll={this.backgroundScrolled}
   images={[image1, image2]}
   duration={3} transition={2} />
@@ -94,12 +102,12 @@ export default class App extends React.Component {
     <WorldMap className="clientsMap" />
     <div id="pixlee_container" style={{width:'50vw'}}></div>
     <div className="footer">
-    <div class="social-media-icons" >
-    <ul class="list-inline col-xs-12">
-              <a href="#"><i class="fa fa-google-plus-square fa-5x"></i></a>
-              <a href="#"><i class="fa fa-twitter-square fa-5x"></i></a>
-              <a href="#"><i class="fa fa-youtube-square fa-5x"></i></a>
-              <a href="#"><i class="fa fa-rss-square fa-5x"></i></a>               
+    <div className="social-media-icons" >
+    <ul className="list-inline col-xs-12">
+              <a href="#"><i className="fa fa-google-plus-square fa-5x"></i></a>
+              <a href="#"><i className="fa fa-twitter-square fa-5x"></i></a>
+              <a href="#"><i className="fa fa-youtube-square fa-5x"></i></a>
+              <a href="#"><i className="fa fa-rss-square fa-5x"></i></a>               
             </ul>
     </div>
     </div>

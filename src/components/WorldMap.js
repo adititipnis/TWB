@@ -58,13 +58,13 @@ class WorldMap extends Component {
                       outline: "none",
                     },
                     hover: {
-                      fill: "#100",
+                      fill: "#222",
                       stroke: "#444",
                       strokeWidth: 0.75,
                       outline: "none",
                     },
                     pressed: {
-                      fill: "#100",
+                      fill: "#111",
                       stroke: "#444",
                       strokeWidth: 0.75,
                       outline: "none",
