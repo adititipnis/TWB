@@ -1,27 +1,18 @@
 @import "https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/css/bootstrap.min.css";
-
 body {
     background-color: black
 }
 
-ul {
-    display: flex;
-    justify-content: flex-end;
-}
-
-li {
-    list-style-type: none;
-    padding: 1%
-}
-
 .navbar-fixed-top {
+    display: flex;
     background-color: transparent !important;
-    color: white
+    color: white;
+    justify-content: flex-end;
+    padding-right: 2%
 }
 
-
-
-  .navbar-fixed-top-black {
+.navbar-fixed-top-black {
+    display: flex;
     background-color: #000 !important;
     transition: background-color 500ms linear;
     color: #fff !important;
@@ -29,36 +20,38 @@ li {
     right: 0;
     left: 0;
     z-index: 1030;
-  }
+    justify-content: flex-end;
+    padding-right: 2%
+}
 
-  .social-media-icons ul {
+.social-media-icons ul {
     list-style: none;
     padding: 0;
     text-align: center;
 }
 
-.social-media-icons a {	
-	display: inline-block;
-	text-decoration: none;
+.social-media-icons a {
+    display: inline-block;
+    text-decoration: none;
     padding: 7px;
     color: white;
     font-size: 10px
 }
 
 .social-media-icons a:nth-child(1) i:hover {
-	color: #d34836;
+    color: #d34836;
 }
 
 .social-media-icons a:nth-child(2) i:hover {
-	color: #4099FF;
+    color: #4099FF;
 }
 
 .social-media-icons a:nth-child(3) i:hover {
-	color: #b31217;
+    color: #b31217;
 }
 
 .social-media-icons a:nth-child(4) i:hover {
-	color: #FF6600;
+    color: #FF6600;
 }
 
 .POPUPS_ROOT {
@@ -75,18 +68,21 @@ li {
 }
 
 #video-1 {
-    display:block;
+    display: block;
     width: 60%;
     height: 60%;
     margin: auto;
     position: absolute;
-  top: 0; left: 0; bottom: 0; right: 0;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
 }
 
 .click-1 {
     cursor: pointer;
-    max-width:100%;
-    max-height:100%
+    max-width: 100%;
+    max-height: 100%
 }
 
 #videoClose {
@@ -108,14 +104,8 @@ li {
     justify-content: space-evenly;
     align-items: center;
     width: 98.75vw;
-    scroll-snap-align: start;
+    scroll-snap-align: center;
     position: relative;
-}
-
-.service {
-    margin-top: 20vh;
-    display: flex;
-    flex-direction: column
 }
 
 .service span {
@@ -124,40 +114,123 @@ li {
     margin-top: 20px
 }
 
-
-
-.mainContainer { 
-  overflow: scroll;
-  scroll-behavior: smooth;
-  height: 100vh;  
-  scroll-snap-type: y proximity;
-}
-
-.servicesSection {
-    display: flex; 
-    justify-content: space-evenly;
-    align-items: center; 
-    margin-top: 100vh; 
-    background-color: black;
+.mainContainer {
+    overflow: scroll;
+    scroll-behavior: smooth;
     height: 100vh;
-  scroll-snap-align: start;
-  position: relative;
+    scroll-snap-type: y proximity;
 }
 
 .clientsMap {
     background-color: #222;
     height: auto;
-  scroll-snap-align: start;
-  position: relative;
-  text-align: center
+    scroll-snap-align: center;
+    position: relative;
+    text-align: center
 }
 
 .footer {
-    display:flex;
-    justify-content:space-evenly;
-    align-items:center;
-    background-color:black;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: black;
     height: 30vh;
-  scroll-snap-align: end;
-  position: relative;
+    scroll-snap-align: end;
+    position: relative;
+}
+
+/*Wide*/
+
+@media screen and (min-width: 480px) {
+    .navigation-narrow {
+        display: none
+    }
+    ul {
+        display: flex;
+        justify-content: flex-end;
+    }
+    li {
+        list-style-type: none;
+        padding: 3%;
+        white-space: nowrap;
+    }
+    .servicesSection {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        margin-top: 100vh;
+        background-color: black;
+        height: 100vh;
+        scroll-snap-align: center;
+        position: relative;
+    }
+    .service {
+        margin-top: 20vh;
+        display: flex;
+        flex-direction: column
+    }
+}
+
+/*Narrow*/
+
+@media screen and (max-width: 480px) {
+    .navigation-wide {
+        display: none
+    }
+    .navigation-narrow {
+        font-size: 30px;
+        cursor: pointer
+    }
+    .servicesSection {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        margin-top: 100vh;
+        background-color: black;
+        height: 100vh;
+        scroll-snap-align: center;
+        position: relative;
+    }
+    .service {
+        display: flex;
+        flex-direction: column
+    }
+    .mobileNavOverlay {
+        display: flex;
+        height: 100%;
+        width: 100%;
+        position: fixed;
+        /* Stay in place */
+        z-index: 1;
+        /* Sit on top */
+        left: 0;
+        top: 0;
+        background-color: rgb(0, 0, 0);
+        /* Black fallback color */
+        background-color: rgba(0, 0, 0, 0.9);
+        /* Black w/opacity */
+        overflow-x: hidden;
+        /* Disable horizontal scroll */
+        transition: 0.5s;
+        /* 0.5 second transition effect to slide in or slide down the overlay (height or width, depending on reveal) */
+    }
+    .mobileNavOverlay .closebtn {
+        margin-bottom: auto;
+        font-size: 60px;
+        color: white;
+        cursor: pointer;
+    }
+    .mobileNavOverlay-content {
+        display: flex;
+        justify-content: space-around;
+        flex-direction: column;
+        width: 100%;
+        text-align: center
+    }
+    .mobileNavOverlay-content li {
+        color: white;
+        align-content: space-around;
+        list-style: none;
+    }
 }
