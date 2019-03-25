@@ -154,11 +154,15 @@ body {
         padding: 3%;
         white-space: nowrap;
     }
+
+    .pageContent {
+        margin-top: 100vh;
+    }
+    
     .servicesSection {
         display: flex;
         justify-content: space-evenly;
         align-items: center;
-        margin-top: 100vh;
         background-color: black;
         height: 100vh;
         scroll-snap-align: center;
@@ -174,10 +178,7 @@ body {
 /*Narrow*/
 
 @media screen and (max-width: 480px) {
-    .slider {
-        height: 50vh;
-        width: 50vw
-    }
+    .slider {}
 
     .navigation-wide {
         display: none
