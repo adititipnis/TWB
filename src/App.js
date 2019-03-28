@@ -26,7 +26,7 @@ export default class App extends React.Component {
     }
   }
 
-  showMobileNav = () => this.setState({ isMobileNavVisible: true })
+  toggleMobileNav = () => this.setState({ isMobileNavVisible: !this.state.isMobileNavVisible })
 
   hideMobileNav = () => this.setState({ isMobileNavVisible: false })
 
@@ -43,7 +43,7 @@ export default class App extends React.Component {
           <Link to="/#ourwork"><li>OUR WORK</li></Link>
           <Link to="/contact#contactSection"><li>CONTACT</li></Link>
         </ul>
-        {!this.state.isMobileNavVisible && <a className="navigation-narrow" onClick={this.showMobileNav}>&#9776;</a>}
+        <a className="navigation-narrow" onClick={this.toggleMobileNav}>&#9776;</a>
       </nav>
       {this.state.isMobileNavVisible && <MobileNav close={this.hideMobileNav} />}
 

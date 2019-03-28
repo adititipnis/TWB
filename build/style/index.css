@@ -12,7 +12,8 @@ h3 {
     background-color: rgba(0, 0, 0, 0.6);
     color: white;
     justify-content: flex-end;
-    padding-right: 2%
+    padding-right: 2%;
+    height: 7%
 }
 
 .navbar-fixed-top-black {
@@ -26,6 +27,11 @@ h3 {
     z-index: 1030;
     justify-content: flex-end;
     padding-right: 2%
+}
+
+#ourwork {
+    padding-top: 7%;
+    background-color: #000
 }
 
 .social-media-icons ul {
@@ -342,7 +348,7 @@ h3 {
     }
     .mobileNavOverlay {
         display: flex;
-        height: 100%;
+        height: auto;
         width: 100%;
         position: fixed;
         /* Stay in place */
@@ -352,12 +358,15 @@ h3 {
         top: 0;
         background-color: rgb(0, 0, 0);
         /* Black fallback color */
-        background-color: rgba(0, 0, 0, 0.9);
+        /* background-color: rgba(0, 0, 0, 0.9); */
         /* Black w/opacity */
         overflow-x: hidden;
         /* Disable horizontal scroll */
         transition: 0.5s;
         /* 0.5 second transition effect to slide in or slide down the overlay (height or width, depending on reveal) */
+        position: fixed;
+        z-index: 1030;
+        top: 7%;
     }
     .mobileNavOverlay .closebtn {
         margin-bottom: auto;
@@ -370,11 +379,17 @@ h3 {
         justify-content: space-around;
         flex-direction: column;
         width: 100%;
-        text-align: center
+        text-align: center;
+        padding: 0;
+        margin-bottom: 0
     }
     .mobileNavOverlay-content li {
         color: white;
         align-content: space-around;
         list-style: none;
+        /* border: 1px solid #666; */
+    }
+    .mobileNavOverlay-content a li {
+        padding: 5%;
     }
 }
