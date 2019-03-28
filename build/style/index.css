@@ -3,9 +3,13 @@ body {
     background-color: black
 }
 
+h3 {
+    color: white
+}
+
 .navbar-fixed-top {
     display: flex;
-    background-color: transparent !important;
+    background-color: rgba(0, 0, 0, 0.6);
     color: white;
     justify-content: flex-end;
     padding-right: 2%
@@ -126,7 +130,138 @@ body {
     height: auto;
     scroll-snap-align: center;
     position: relative;
-    text-align: center
+    text-align: center;
+    padding-top: 10vh
+}
+
+.section {
+    padding: 30vh 15vw 30vh 15vw;
+    color: #fff;
+    background-color: #222;
+    text-align: justify
+}
+
+.section h3 {
+    text-align: center;
+    margin-bottom: 10vh
+}
+
+.section:hover {
+    background-color: #111
+}
+
+.stepsSection {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: black;
+    position: relative;
+    padding: 10vh 0 10vh 0;
+}
+
+.step {
+    background-color: #222;
+    padding: 2vh 2vw 3vh 2vw;
+    border-radius: 20px
+}
+
+.step-1 {
+    margin: 5vh 30vw 0 10vw;
+}
+
+.step-2 {
+    margin: 5vh 25vw 0 15vw;
+}
+
+.step-3 {
+    margin: 5vh 20vw 0 20vw;
+}
+
+.step-4 {
+    margin: 5vh 15vw 0 25vw;
+}
+
+.step-5 {
+    margin: 5vh 10vw 0 30vw;
+}
+
+.step h4, .step span {
+    color: #fff
+}
+
+.step:hover {
+    background-color: #111;
+}
+
+.statusMessageDiv {
+    color: #fff;
+    padding-bottom: 5vh;
+}
+
+.textInput {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    font-size: 14px;
+    color: #fff;
+    letter-spacing: 1px;
+    font-family: 'BrandonGrotesque-Regular', sans-serif;
+    font-weight: 400;
+    width: 100%;
+    height: 35px;
+    border: none;
+    outline: none;
+    border-radius: 0px;
+    outline: none;
+    background-color: transparent;
+}
+
+.border {
+    border: 1px solid #949494;
+    border-radius: 7px;
+    padding: 6px 10px;
+    margin-bottom: 15px;
+}
+
+.servicesInputList {
+    display: flex;
+    flex-direction: column;
+}
+
+.servicesInputDiv {
+    margin-top: 5vh;
+    color: #949494;
+}
+
+.servicesInputDiv p {
+    color: #949494;
+    margin-bottom: 5vh;
+}
+
+.servicesInputList li {
+    list-style-type: none;
+    padding-top: 1vh;
+}
+
+.servicesInputList li label {
+    margin-left: 2vw
+}
+
+.submitButton {
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    font-size: 14px;
+    color: #fff;
+    letter-spacing: 1px;
+    font-family: 'BrandonGrotesque-Regular', sans-serif;
+    font-weight: 400;
+    width: 30%;
+    height: 35px;
+    background-color: transparent;
 }
 
 .footer {
@@ -135,7 +270,7 @@ body {
     align-items: center;
     background-color: black;
     height: 30vh;
-    scroll-snap-align: end;
+    /* scroll-snap-align: end; */
     position: relative;
 }
 
@@ -149,16 +284,19 @@ body {
         display: flex;
         justify-content: flex-end;
     }
-    li {
+    .navigation-wide li {
         list-style-type: none;
-        padding: 3%;
         white-space: nowrap;
     }
-
+    .navigation-wide a {
+        margin: 3%;
+    }
+    .navigation-wide a li {
+        color: #fff;
+    }
     .pageContent {
         margin-top: 100vh;
     }
-    
     .servicesSection {
         display: flex;
         justify-content: space-evenly;
@@ -178,8 +316,6 @@ body {
 /*Narrow*/
 
 @media screen and (max-width: 480px) {
-    .slider {}
-
     .navigation-wide {
         display: none
     }
@@ -187,12 +323,14 @@ body {
         font-size: 30px;
         cursor: pointer
     }
+    .pageContent {
+        margin-top: 100vh;
+    }
     .servicesSection {
         display: flex;
         flex-direction: column;
         justify-content: space-evenly;
         align-items: center;
-        margin-top: 100vh;
         background-color: black;
         height: 100vh;
         scroll-snap-align: center;
