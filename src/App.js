@@ -38,9 +38,9 @@ export default class App extends React.Component {
       {/* <HeroCarousel /> */}
       <nav id="navigation" className={navClassName}>
         <ul className="navigation-wide">
-          <Link to="/"><li>HOME</li></Link>
-          <Link to="/"><li>SERVICES</li></Link>
-          <Link to="/"><li>OUR WORK</li></Link>
+          <Link to="/#hello"><li>HOME</li></Link>
+          <Link to="/#services"><li>SERVICES</li></Link>
+          <Link to="/#ourwork"><li>OUR WORK</li></Link>
           <Link to="/contact#contactSection"><li>CONTACT</li></Link>
         </ul>
         {!this.state.isMobileNavVisible && <a className="navigation-narrow" onClick={this.showMobileNav}>&#9776;</a>}

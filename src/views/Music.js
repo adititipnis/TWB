@@ -4,7 +4,7 @@ import FeaturedSection from '../components/FeaturedSection'
 export default function Music(props) {
     return (
         <div>
-            <div className="stepsSection">
+            <div id="music" className="stepsSection">
                 <div className="step step-1">
                     <h4>CREATIVE DISCUSSION</h4>
                     <span>To start things off, we will connect over email, Skype or phone to discuss the needs of your project. This will require you to give me a description of what your vision is for your song.</span>
