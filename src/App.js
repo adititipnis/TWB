@@ -19,23 +19,23 @@ export default class App extends React.Component {
     this.state = { isMobileNavVisible: false }
   }
 
-  onMainScroll = () => {
-    const newScrollHeight = Math.ceil(ReactDOM.findDOMNode(this).scrollTop / 50) * 50;
-    if (this.state.currentScrollHeight != newScrollHeight) {
-      this.setState({ currentScrollHeight: newScrollHeight })
-    }
-  }
+  // onMainScroll = () => {
+  //   const newScrollHeight = Math.ceil(ReactDOM.findDOMNode(this).scrollTop / 50) * 50;
+  //   if (this.state.currentScrollHeight != newScrollHeight) {
+  //     this.setState({ currentScrollHeight: newScrollHeight })
+  //   }
+  // }
 
   toggleMobileNav = () => this.setState({ isMobileNavVisible: !this.state.isMobileNavVisible })
 
   hideMobileNav = () => this.setState({ isMobileNavVisible: false })
 
   render() {
-    const navClassName = this.state.currentScrollHeight > 500 ? 'navbar-fixed-top navbar-fixed-top-black' : 'navbar-fixed-top'
-    return (<div className="mainContainer" onScroll={this.onMainScroll}>
-      <BackgroundSlider onscroll={this.backgroundScrolled} images={[image3, image2, image1]}
-        duration={3} transition={2} />
-      {/* <HeroCarousel /> */}
+    // const navClassName = this.state.currentScrollHeight > 500 ? 'navbar-fixed-top navbar-fixed-top-black' : 'navbar-fixed-top'
+    const navClassName = 'navbar-fixed-top-black'
+    return (<div className="mainContainer">
+      {/* <BackgroundSlider onscroll={this.backgroundScrolled} images={[image3, image2, image1]}
+        duration={3} transition={2} /> */}
       <nav id="navigation" className={navClassName}>
         <ul className="navigation-wide">
           <Link to="/#hello"><li>HOME</li></Link>
@@ -46,7 +46,7 @@ export default class App extends React.Component {
         <a className="navigation-narrow" onClick={this.toggleMobileNav}>&#9776;</a>
       </nav>
       {this.state.isMobileNavVisible && <MobileNav close={this.hideMobileNav} />}
-
+      <HeroCarousel />
       <div className="pageContent">
         <Route path="/" exact component={Home} />
         <Route path="/music" exact component={Music} />
